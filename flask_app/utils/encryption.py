@@ -9,17 +9,14 @@ cipher_suite = Fernet(static_key)
 
 
 def encrypt_file(file_data):
-    """Encrypts file data using Fernet symmetric encryption."""
     return cipher_suite.encrypt(file_data)
 
 
 def decrypt_file(encrypted_data):
-    """Decrypts file data using Fernet symmetric encryption."""
     return cipher_suite.decrypt(encrypted_data)
 
 
 def decrypt_file_path(file_path):
-    """Decrypts the contents of an encrypted file."""
     with open(file_path, 'rb') as file:
         encrypted_data = file.read()
     decrypted_data = cipher_suite.decrypt(encrypted_data)

@@ -36,7 +36,6 @@ def register():
 
     return jsonify({"user_id": str(user_id)}), 201
 
-
 # Auth API
 @auth_bp.route('/auth-status', methods=['GET'])
 def auth_status():
@@ -90,8 +89,7 @@ def login():
 
     return response
 
-
-
+# Logout API (removes cookie)
 @auth_bp.route('/logout', methods=['POST'])
 def logout():
     # Create a response object and unset the cookie
