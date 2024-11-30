@@ -1,9 +1,12 @@
-# utils/encryption.py
 from cryptography.fernet import Fernet
 
-# Generate a key for encryption (you might want to save this key securely)
-encryption_key = Fernet.generate_key()
-cipher_suite = Fernet(encryption_key)
+# encryption_key = Fernet.generate_key()
+# print(encryption_key)
+# cipher_suite = Fernet(encryption_key)
+
+static_key = b'hakQhiT7Krh_2VMXh9y-nBd3CErskZZkWL8U68ZocXY='
+cipher_suite = Fernet(static_key)
+
 
 def encrypt_file(file_data):
     """Encrypts file data using Fernet symmetric encryption."""

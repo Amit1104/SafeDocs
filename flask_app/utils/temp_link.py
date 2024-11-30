@@ -1,9 +1,8 @@
-# utils/temp_link.py
+
 import jwt
 from datetime import datetime, timedelta
 from flask import url_for
 
-# Secret key for signing the token (store securely in environment variables)
 SECRET_KEY = "your_secret_key_here"
 
 def generate_temporary_link(file_path, expiration_minutes=60):
@@ -14,6 +13,5 @@ def generate_temporary_link(file_path, expiration_minutes=60):
     }
     token = jwt.encode(payload, SECRET_KEY, algorithm="HS256")
     
-    # Generate a URL with the token as a query parameter
     link = url_for('file.view_temporary_file', token=token, _external=True)
     return link

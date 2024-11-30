@@ -5,9 +5,8 @@ from routes import home_bp, user_bp, auth_bp, file_bp
 
 app = Flask(__name__)
 
-app = Flask(__name__)
 # CORS(app, supports_credentials=True)
-CORS(app, resources={r"/*": {"origins": ["*","http://localhost:3000","http://localhost:3000/"]}},supports_credentials=True)  # Enables CORS for all routes with any origin
+CORS(app, resources={r"/*": {"origins": ["*","http://localhost:3000","http://localhost:3000/"]}},supports_credentials=True)
 
 
 # Register Blueprints

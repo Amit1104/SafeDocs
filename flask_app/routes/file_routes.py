@@ -74,6 +74,7 @@ def upload_file(user_id):
 
     return jsonify({"message": "File uploaded and encrypted successfully", "file_path": file_path})
     
+
 @file_bp.route('/delete_file', methods=['POST'])
 @auth_required
 def delete_file(user_id):
@@ -107,7 +108,6 @@ def delete_file(user_id):
         return jsonify({"message": f"File '{filename}' deleted successfully"}), 200
     else:
         return jsonify({"error": "File not found"}), 404
-
 
 
 @file_bp.route('/download_file', methods=['GET'])
@@ -153,7 +153,6 @@ def download_file(user_id):
         download_name=filename,  # Original filename for download
         mimetype='application/octet-stream'
     )
-
 
 
 @file_bp.route('/generate_link', methods=['POST'])
