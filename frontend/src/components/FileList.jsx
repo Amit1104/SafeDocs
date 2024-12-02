@@ -147,7 +147,7 @@ const FileList = () => {
                                             color="primary"
                                             size="small"
                                             onClick={() => handleDownload(file.file_name, file.file_path)}
-                                            sx={{ mr: 1 }}
+                                            sx={{ m: 1 }}
                                         >
                                             Download
                                         </Button>
@@ -156,7 +156,7 @@ const FileList = () => {
                                             color="secondary"
                                             size="small"
                                             onClick={() => handleDelete(file.file_name)}
-                                            sx={{ mr: 1 }}
+                                            sx={{ m: 1 }}
                                         >
                                             Delete
                                         </Button>
@@ -165,6 +165,7 @@ const FileList = () => {
                                             color="info"
                                             size="small"
                                             onClick={() => handleTempLink(file.file_path)}
+                                            sx={{ m: 1 }}
                                         >
                                             Copy Link (1hr valid)
                                         </Button>
